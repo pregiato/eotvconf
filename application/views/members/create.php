@@ -114,9 +114,9 @@
                             <label for="inputfile">Fájlfeltölt</label>
                             <input type="file" id="inputfile" name="inputfile">
                             <p class="help-block">Az absztrakt feltöltésének helye</p>
-                            <?php if(null !== isset($data[' upload_error'])){
+                            <? if(isset($upload_data)):
                                  print_r($upload_data);
-                                } 
+                               endif;
                             ?>
                         </div>
                    </div>
