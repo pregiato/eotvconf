@@ -51,7 +51,7 @@
             </div>
 
             <?php echo validation_errors(); ?>
-            <?php echo form_open('members/create'); ?>
+			<?php echo form_open('members/create'); ?>
                 <section> <!--Személys adatok-->
                 <h4>Személyes információk</h4>
                 <div class="row">
@@ -111,7 +111,6 @@
                            <input class="form-control" id="summary" name="summary" type="text" rows="4" cols="50" placeholder="Néhány mondatos összefoglaló" required></input>
                        </div>
                        <div class="form-group">
-<<<<<<< HEAD
                             <label for="inputfile">Fájlfeltölt</label>
                             <input type="file" id="inputfile" name="inputfile">
                             <p class="help-block">Az absztrakt feltöltésének helye</p>
@@ -119,11 +118,6 @@
                                  print_r($upload_data);
                                 } 
                             ?>
-=======
-                            <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile">
-                            <p class="help-block">Example block-level help text here.</p>
->>>>>>> origin/master
                         </div>
                    </div>
                </section>
