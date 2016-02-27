@@ -70,19 +70,6 @@ class Members extends CI_Controller {
 			    $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
 			   $data = $this->input->post();
-			   //  $data = array(
-			   //  	'slug' => $slug,
-			   //      'name' => $this->input->post('name'),
-			   //      'email' => $this->input->post('email'),
-			   //      'university' => $this->input->post('university'),
-			   //     	'phone' => $this->input->post('phone'),
-			   //      'accomodation' => $this->input->post('accomodation'),
-			   //      'work_title' => $this->input->post('work_title'),
-			   //      'publication' => $this->input->post('publication'),
-			   //      'summary' => $this->input->post('summary'),
-			   //      'leader_name' => $this->input->post('leader_name'),
-			   //      'leader_email' => $this->input->post('leader_email')
-		    // );
 			   $config['upload_path'] = './uploads/';
 		        $config['allowed_types'] = 'docx|pdf';
 		        $config['max_size']    = '100';
@@ -110,3 +97,36 @@ class Members extends CI_Controller {
 		    }
 		}
 }
+=======
+
+		    	$this->db->insert('members', $data);
+		        $this->load->view('members/success');
+		    }
+		}
+
+		public function upload()
+	    {
+	        //set preferences
+	        $config['upload_path'] = './uploads/';
+	        $config['allowed_types'] = 'docx|pdf';
+	        $config['max_size']    = '100';
+
+	        //load upload class library
+	        $this->load->library('upload', $config);
+
+	        if (!$this->upload->do_upload('filename'))
+	        {
+	            // case - failure
+	            $upload_error = array('error' => $this->upload->display_errors());
+	            $this->load->view('upload_file_view', $upload_error);
+	        }
+	        else
+	        {
+	            // case - success
+	            $upload_data = $this->upload->data();
+	            $data['success_msg'] = '<div class="alert alert-success text-center">Your file <strong>' . $upload_data['file_name'] . '</strong> was successfully uploaded!</div>';
+	            $this->load->view('upload_file_view', $data);
+	        }
+	    }
+}
+>>>>>>> origin/master
