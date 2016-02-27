@@ -113,11 +113,11 @@
                        <div class="form-group">
                             <label for="inputfile">Fájlfeltölt</label>
                             <input type="file" id="inputfile" name="inputfile">
-                            <p class="help-block">Az absztrakt feltöltésének helye</p>
-                            <? if(isset($upload_data)):
-                                 print_r($upload_data);
-                               endif;
-                            ?>
+	                    <div class="form-group">
+		                    <label for="inputfile">Fájlfeltölt</label>
+		                    <input type="file" id="inputfile" name="inputfile">
+		                    <? if(isset($upload_data)):?><p class="help-block"><?=$upload_data;?></p><? endif;?>                            
+	                    </div>
                         </div>
                    </div>
                </section>
