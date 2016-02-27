@@ -1,4 +1,5 @@
 <?php
+<?php
 class Members extends CI_Controller {
 
         public function __construct()
@@ -94,11 +95,18 @@ class Members extends CI_Controller {
 		        if (!$this->upload->do_upload('filename'))
 		        {
 		            // case - failure
+<<<<<<< HEAD
 		            $data['upload_error'] = $this->upload->display_errors();
 		            $this->load->view('templates/header', $data);
 			        $this->load->view('members/create', $data);
 			        $this->load->view('templates/footer');
 		            
+=======
+		            $this->load->view('templates/header', $data);
+			        $this->load->view('members/create');
+			        $this->load->view('templates/footer');
+		            $data['upload_error'] = $this->upload->display_errors();
+>>>>>>> origin/master
 		        }
 		        else
 		        {
@@ -110,4 +118,8 @@ class Members extends CI_Controller {
 	        	}
 		    }
 		}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
