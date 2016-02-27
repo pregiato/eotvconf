@@ -104,9 +104,10 @@ class Members extends CI_Controller {
 		        {
 		            // case - success
 		            $upload_data = $this->upload->data();
-		            $data['success_msg'] = '<div class="alert alert-success text-center">Your file <strong>' . $upload_data['file_name'] . '</strong> was successfully uploaded!</div>' . $data['upload_error'];
-	            	$this->db->insert('members', $data);
-		        	$this->load->view('members/success');
+		            print_r($upload_data);
+		            //$data['success_msg'] = '<div class="alert alert-success text-center">Your file <strong>' . $upload_data['file_name'] . '</strong> was successfully uploaded!</div>' . $data['upload_error'];
+	            		//$this->db->insert('members', $data);
+		        	//$this->load->view('members/success');
 	        	}
 		    }
 		}
