@@ -64,37 +64,22 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
+                            <put type="email" class="form-control" placeholder="Email" id="email" name="email" required>
                         </div>
                         <fieldset>
                             <div class="some-class">
                                 <label>Szállást kérek: </label>
-                                <input type="radio" class="radio" name="acc_ans" value="igen" id="acc_yes" />
-                                <label for="acc_ans">Igen</label>
-                                <input type="radio" class="radio" name="acc_ans" value="nem" id="acc_no" />
-                                <label for="acc_ans">Nem</label>
+                                <input type="radio" class="radio" name="accomodation" value="igen" id="acc_yes" />
+                                <label for="accomodation">Igen</label>
+                                <input type="radio" class="radio" name="accomodation" value="nem" id="acc_no" />
+                                <label for="accomodation">Nem</label>
                             </div>
                         </fieldset>
-                        <!--Második variáció
-                            <div class="col-sm-5">
-                            <h4>Szállást kérek:</h4>
-                        </div>
-                         <h4>Szállást kérek:</h4>
-                        <div class="col-sm-7">
-
-                            <div class="form-group">
-                            <select class="form-control" name="accom" id="accom" required>
-                                <option readonly>Válaszzon</option>
-                                <option>Igen</option>
-                                <option>Nem</option>
-                            </select>
-                             </div>
-                        </div>-->
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Egyetem, kar, szak" id="uni" name="uni" required>
+                            <input type="text" class="form-control" placeholder="Egyetem, kar, szak" id="university" name="university" required>
                         </div>
 
                         <div class="form-group">
@@ -108,23 +93,32 @@
                    <div class="row">
                        <div class="col-sm-6">
                            <div class="form-group">
-                             <input type="text" class="form-control" placeholder="Munka cím (végleges)" id="work" name="work" required>
+                             <input type="text" class="form-control" placeholder="Munka cím (végleges)" id="work_title" name="work_title" required>
                             </div>
                        </div>
                        <div class="col-sm-6">
                             <fieldset>
                                 <div class="some-class">
                                     <label>Publikálok: </label>
-                                    <input type="radio" class="radio" name="pub_ans" value="igen" id="pub_no" />
-                                    <label for="pub_ans">Igen</label>
-                                    <input type="radio" class="radio" name="pub_ans" value="nem" id="pub_no" />
-                                    <label for="pub_ans">Nem</label>
+                                    <input type="radio" class="radio" name="publication" value="igen" id="pub_no" />
+                                    <label for="publication">Igen</label>
+                                    <input type="radio" class="radio" name="publication" value="nem" id="pub_no" />
+                                    <label for="publication">Nem</label>
                                 </div>
                             </fieldset>
                        </div>
                        <div class="col-sm-12">
-                           <input class="form-control" id="Text1" name="Text1" type="text" rows="4" cols="50" placeholder="Néhány mondatos összefoglaló" required></input>
+                           <input class="form-control" id="summary" name="summary" type="text" rows="4" cols="50" placeholder="Néhány mondatos összefoglaló" required></input>
                        </div>
+                       <div class="form-group">
+                            <label for="inputfile">Fájlfeltölt</label>
+                            <input type="file" id="inputfile" name="inputfile">
+                            <p class="help-block">Az absztrakt feltöltésének helye</p>
+                            <? if(isset($upload_data)):
+                                 print_r($upload_data);
+                               endif;
+                            ?>
+                        </div>
                    </div>
                </section>
                <section> <!--Témavezető-->
@@ -132,16 +126,16 @@
                <div class="row">
                    <div class="col-sm-6">
                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="A témavezető neve" id="tem_name" name="tem_name" required>
+                            <input type="text" class="form-control" placeholder="A témavezető neve" id="leader_name" name="leader_name" required>
                         </div>
                    </div>
                    <div class="col-sm-6">
                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" id="tem_email" name="tem_email" required>
+                            <input type="email" class="form-control" placeholder="Email" id="leader_email" name="leader_email" required>
                         </div>
                    </div>
                </section>
-                 <?php include 'upload_file_view.php'; ?>
+                 
                  <div class="text-center mt20">
                     <input type="submit" name="submit" class="btn btn-black" id="registration-submit-btn" value="Regisztráció" />
                 </div>
